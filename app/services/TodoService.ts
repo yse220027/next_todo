@@ -2,9 +2,9 @@ import { Todo } from "../models/Todo";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
-export const getTodos = async () => {
+export const getTodos = async (accessToken: string) => {
     //TODO: API URL設定
-    const url = API_URL + "";
+    const url = API_URL + "api/todo/get";
     try {
         const response = await fetch(url);
         if (response.ok) {
